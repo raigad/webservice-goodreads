@@ -1,4 +1,5 @@
 webservice-goodreads
 ====================
 
-webservice to access goodreads api
+#GoodReads API
+webservice to access goodreads api via perl 
