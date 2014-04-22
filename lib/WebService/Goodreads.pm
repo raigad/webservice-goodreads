@@ -1,6 +1,6 @@
 package WebService::Goodreads;
 use Moose;
-with 'WebService::Role::APICaller','WebService::Role::Books';
+with 'WebService::Goodreads::Role::APICaller','WebService::Goodreads::Role::Books';
 
 has 'key' => (
     is  => 'ro',

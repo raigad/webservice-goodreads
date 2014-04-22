@@ -1,6 +1,4 @@
-use strict;
-use warnings;
-package WebService::Role::APICaller;
+package WebService::Goodreads::Role::APICaller;
 use Moose::Role;
 use Carp;
 use HTTP::Tiny;

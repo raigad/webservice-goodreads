@@ -1,4 +1,4 @@
-package WebService::Role::Book;
+package WebService::Goodreads::Role::Book;
 use Moose::Role;
 
 has review_count_uri =>(
