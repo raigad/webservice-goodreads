@@ -10,12 +10,11 @@ has 'key' => (
 has 'format' => (
     is  => 'rw',
     isa => 'Str',
-    default => 'json'
+    default => 'xml'
 );
 has 'base_url' => (
     is      => 'ro',
     isa     => 'Str',
     default => 'https://www.goodreads.com/'
 );
-
 1;
