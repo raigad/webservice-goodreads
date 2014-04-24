@@ -16,6 +16,11 @@ has title_uri =>(
     isa => 'Str',
     default => 'book/title'
 ); 
+has book_review_uri =>(
+    is  => 'ro',
+    isa => 'Str',
+    default => 'book/show'
+); 
 sub get_book_review_counts{
     my ($self,$rh_args) = @_;
     croak "isbns are required" unless($rh_args->{'isbns'});
@@ -27,4 +32,9 @@ sub get_book_by_title{
     croak "either author or title is required" unless($rh_args->{'title'} || $rh_args->{author});
     return  $self->ua->get(uri_encode($self->base_url.$self->title_uri.'.'.$self->format.'?author='.capitalize_title($rh_args->{'author'} || '').'&title='.($rh_args->{title} || '').'&key='.$self->key));
 }
+sub get_book_review_by_id{
+    my ($self,$rh_args) = @_;
+    croak "book_id is required" unless($rh_args->{'book_id'});
+    return  $self->ua->get(uri_encode($self->base_url.$self->book_review_uri.'/'.$rh_args->{book_id}.'?format='.$self->format.'&key='.$self->key));
+    }
 1;
